@@ -1,0 +1,55 @@
+[
+    {
+        "goalId": "1",
+        "goalNum": 1,
+        "goalName": "Real Estate",
+        "description": "Some description",
+        "goalStartDate": "1-22-2025",
+        "targetFinishData": "3-22-2025",
+        "plans": [
+            {
+                "taskNum": "1",
+                "taskName": "TaskName",
+                "taskStartDate": "1-22-2025",
+                "tastTargetFinishDate": "1-28-2025",
+                "isComplete": false
+            }
+        ]
+    },
+
+    {
+        "goalId": "2",
+        "goalNum": 2,
+        "goalName": "Azure 204",
+        "description": "Some description",
+        "goalStartDate": "1-22-2025",
+        "targetFinishData": "3-22-2025",
+        "plans": [
+            {
+                "taskNum": "1",
+                "taskName": "TaskName",
+                "taskStartDate": "1-22-2025",
+                "tastTargetFinishDate": "1-28-2025",
+                "isComplete": false
+            }
+        ]
+    },
+
+    {
+        "goalId": "3",
+        "goalNum": 3,
+        "goalName": "Best Full Stack Engineer",
+        "description": "Some description",
+        "goalStartDate": "1-22-2025",
+        "targetFinishData": "3-22-2025",
+        "plans": [
+            {
+                "taskNum": "1",
+                "taskName": "TaskName",
+                "taskStartDate": "1-22-2025",
+                "tastTargetFinishDate": "1-28-2025",
+                "isComplete": false
+            }
+        ]
+    }
+]

@@ -1,0 +1,100 @@
+<div class="container">
+    <h1 class="myGoal">My Goal For 2025</h1>
+    <hr />
+    <div class="goal-box">
+        <div class="card-container">
+            <h2>To Do</h2>
+            <hr />
+            <div
+                cdkDropList
+                #todoList="cdkDropList"
+                [cdkDropListData]="allData"
+                [cdkDropListConnectedTo]="[inProgressDataList, doneList]"
+                class="card-list"
+                (cdkDropListDropped)="drop($event)"
+            >
+                @for (cardData of allData; track cardData) {
+                    <div class="card-box" cdkDrag>
+                        <mat-card class="card" appearance="outlined">
+                            <small class="goal-count">Goal No: {{ cardData.goalNum }}</small>
+                            <mat-card-title class="goal-name">{{ cardData.goalName }}</mat-card-title>
+                            <mat-card-content class="goal-description">
+                                {{ cardData.description }}
+                            </mat-card-content>
+
+                            <mat-card-footer class="card-footer">
+                                <div class="card-date-show">
+                                    <small>Start Date: {{ cardData.goalStartDate }}</small>
+                                    <small>Target Finish Date: {{ cardData.targetFinishData }}</small>
+                                </div>
+                                <button (click)="test(cardData.goalId)" class="view-more-button" mat-flat-button>View Plans</button>
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card-container">
+            <h2>In Progress</h2>
+            <hr />
+            <div
+                cdkDropList
+                #inProgressDataList="cdkDropList"
+                [cdkDropListData]="inProgressData"
+                [cdkDropListConnectedTo]="[doneList, todoList]"
+                class="card-list"
+                (cdkDropListDropped)="drop($event)"
+            >
+                @for (progress of inProgressData; track progress) {
+                    <div class="card-box" cdkDrag>
+                        <mat-card class="card" appearance="outlined">
+                            <small class="goal-count">Goal No: {{ progress.goalNum }}</small>
+                            <mat-card-title class="goal-name">{{ progress.goalName }}</mat-card-title>
+                            <mat-card-content class="goal-description">
+                                {{ progress.description }}
+                            </mat-card-content>
+
+                            <mat-card-footer class="card-date-show">
+                                <small>Start Date: {{ progress.goalStartDate }}</small>
+                                <small>Target Finish Date: {{ progress.targetFinishData }}</small>
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card-container">
+            <h2>Done</h2>
+            <hr />
+            <div
+                cdkDropList
+                #doneList="cdkDropList"
+                [cdkDropListData]="doneData"
+                [cdkDropListConnectedTo]="[todoList, inProgressDataList]"
+                class="card-list"
+                (cdkDropListDropped)="drop($event)"
+            >
+                @for (done of doneData; track done) {
+                    <div class="card-box" cdkDrag>
+                        <mat-card class="card" appearance="outlined">
+                            <small class="goal-count">Goal No: {{ done.goalNum }}</small>
+                            <mat-card-title class="goal-name">{{ done.goalName }}</mat-card-title>
+                            <mat-card-content class="goal-description">
+                                {{ done.description }}
+                            </mat-card-content>
+
+                            <mat-card-footer class="card-date-show">
+                                <small>Start Date: {{ done.goalStartDate }}</small>
+                                <small>Target Finish Date: {{ done.targetFinishData }}</small>
+                            </mat-card-footer>
+                        </mat-card>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
