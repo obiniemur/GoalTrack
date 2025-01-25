@@ -1,0 +1,30 @@
+.detail {
+    height: 900px;
+    width: 900px;
+}
+.GoalNameInDetail {
+    text-align: center;
+}
+
+.date-in-detail-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plan-card-detail {
+    margin-bottom: 5px;
+    position: relative;
+}
+.card-detail-date {
+    display: flex;
+    justify-content: space-between;
+}
+.plan-card {
+    background-color: beige;
+}
+.plan-button {
+    background: 1px solid green;
+    border: none;
+    text-align: right;
+    width: 200px;
+}

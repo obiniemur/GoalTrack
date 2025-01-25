@@ -1,1 +1,32 @@
-<p>card-detail works!</p>
+<mat-dialog-content class="detail">
+    <h1 class="GoalNameInDetail">{{ card.goalName }}</h1>
+    <hr />
+
+    <div class="date-in-detail-box">
+        <p>Start Date: {{ card.goalStartDate }}</p>
+        <p>Target Finish Date: {{ card.targetFinishData }}</p>
+    </div>
+
+    <hr />
+
+    <div>
+        {{ card.description }}
+    </div>
+
+    <hr />
+
+    @for (plan of card.plans; track $index) {
+        <mat-card class="plan-card-detail" appearance="outlined">
+            <mat-card-content>
+                <div class="plan-card">
+                    <h3>{{ plan.taskName }}</h3>
+                    <div class="card-detail-date">
+                        <small>Start Date: {{ plan.taskStartDate }}</small>
+                        <small>Target Finish Date: {{ plan.tastTargetFinishDate }}</small>
+                    </div>
+                </div>
+            </mat-card-content>
+            <button class="plan-button">Complete</button>
+        </mat-card>
+    }
+</mat-dialog-content>
